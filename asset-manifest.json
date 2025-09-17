@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/luanda-school-pickup/static/css/main.dee17e36.css",
+    "main.js": "/luanda-school-pickup/static/js/main.6bf13ddc.js",
+    "static/js/453.e4a390b8.chunk.js": "/luanda-school-pickup/static/js/453.e4a390b8.chunk.js",
+    "index.html": "/luanda-school-pickup/index.html",
+    "main.dee17e36.css.map": "/luanda-school-pickup/static/css/main.dee17e36.css.map",
+    "main.6bf13ddc.js.map": "/luanda-school-pickup/static/js/main.6bf13ddc.js.map",
+    "453.e4a390b8.chunk.js.map": "/luanda-school-pickup/static/js/453.e4a390b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dee17e36.css",
+    "static/js/main.6bf13ddc.js"
+  ]
+}
