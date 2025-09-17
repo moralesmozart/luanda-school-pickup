@@ -66,19 +66,19 @@ Para instruções detalhadas sobre cada página e como usar, consulte o **[Guia 
 
 ### **🚀 Acesso Rápido**
 
-**🏠 Página Principal:** https://moralesmozart.github.io/luanda-school-pickup/
+**🏠 Página Principal:** https://moralesmozart.github.io/luanda-school-pickup/#/
 
-**👨‍💼 Admin:** https://moralesmozart.github.io/luanda-school-pickup/admin
+**👨‍💼 Admin:** https://moralesmozart.github.io/luanda-school-pickup/#/admin
 - Credenciais: `admin@escola.ao` / `admin123`
 
-**👨‍👩‍👧‍👦 Pais:** https://moralesmozart.github.io/luanda-school-pickup/parent
+**👨‍👩‍👧‍👦 Pais:** https://moralesmozart.github.io/luanda-school-pickup/#/parent
 - Demo: Click "Demo: João Santos" ou "Demo: Carlos Ferreira"
 
-**📊 Monitor:** https://moralesmozart.github.io/luanda-school-pickup/viewdashboard
+**📊 Monitor:** https://moralesmozart.github.io/luanda-school-pickup/#/viewdashboard
 - Vista em tempo real da fila
 
 ### **🎮 Demonstração Rápida**
-1. Vá para `/parent`
+1. Vá para `/#/parent`
 2. Click "Demo: João Santos"
 3. Explore as 4 secções do dashboard
 4. Teste "Estou Aqui!" e "Ver Fila"

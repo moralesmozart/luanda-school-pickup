@@ -2,10 +2,12 @@
 
 ## 📍 **URLs Disponíveis e Como Usar**
 
+**⚠️ IMPORTANTE:** As URLs agora usam HashRouter (#) para funcionar corretamente com GitHub Pages.
+
 ---
 
 ## 🏠 **Página Principal**
-**URL:** `https://moralesmozart.github.io/luanda-school-pickup/`
+**URL:** `https://moralesmozart.github.io/luanda-school-pickup/#/`
 
 ### **O que é:**
 A página inicial da plataforma, onde escolas e pais podem conhecer o sistema e suas funcionalidades.
@@ -29,7 +31,7 @@ A página inicial da plataforma, onde escolas e pais podem conhecer o sistema e 
 ---
 
 ## 👨‍💼 **Área Administrativa**
-**URL:** `https://moralesmozart.github.io/luanda-school-pickup/admin`
+**URL:** `https://moralesmozart.github.io/luanda-school-pickup/#/admin`
 
 ### **O que é:**
 O painel de controlo principal para administradores escolares. Aqui gerem-se todos os pais, alunos e a fila de recolha.
@@ -71,7 +73,7 @@ O painel de controlo principal para administradores escolares. Aqui gerem-se tod
 ---
 
 ## 👨‍👩‍👧‍👦 **Aplicação para Pais**
-**URL:** `https://moralesmozart.github.io/luanda-school-pickup/parent`
+**URL:** `https://moralesmozart.github.io/luanda-school-pickup/#/parent`
 
 ### **O que é:**
 A aplicação móvel para pais gerirem os seus filhos e notificarem a sua chegada à escola.
@@ -116,7 +118,7 @@ A aplicação móvel para pais gerirem os seus filhos e notificarem a sua chegad
 ---
 
 ## 📊 **Painel de Monitorização**
-**URL:** `https://moralesmozart.github.io/luanda-school-pickup/monitor`
+**URL:** `https://moralesmozart.github.io/luanda-school-pickup/#/monitor`
 
 ### **O que é:**
 Vista em tempo real da fila de recolha, ideal para funcionários da portaria ou receção.
@@ -140,7 +142,7 @@ Vista em tempo real da fila de recolha, ideal para funcionários da portaria ou 
 ---
 
 ## 🚗 **Dashboard de Fila**
-**URL:** `https://moralesmozart.github.io/luanda-school-pickup/viewdashboard`
+**URL:** `https://moralesmozart.github.io/luanda-school-pickup/#/viewdashboard`
 
 ### **O que é:**
 Painel estilo "McDonald's" para visualização da fila de recolha com gestão completa.
