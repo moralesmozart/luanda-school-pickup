@@ -61,25 +61,27 @@ http://localhost:3000
 
 ## 🎯 Como Usar
 
-### **1. Acesso Administrativo**
-- URL: `/admin`
+### **📖 Guia Completo de URLs**
+Para instruções detalhadas sobre cada página e como usar, consulte o **[Guia de URLs](URLS-GUIDE.md)**.
+
+### **🚀 Acesso Rápido**
+
+**🏠 Página Principal:** https://moralesmozart.github.io/luanda-school-pickup/
+
+**👨‍💼 Admin:** https://moralesmozart.github.io/luanda-school-pickup/admin
 - Credenciais: `admin@escola.ao` / `admin123`
-- Funcionalidades:
-  - Criar credenciais para pais
-  - Aprovar registos de alunos
-  - Monitorizar fila de recolha
 
-### **2. Aplicação para Pais**
-- URL: `/parent`
-- Login com credenciais fornecidas pela escola
-- Ou use os dados de demonstração:
-  - **João Santos**: `joao.santos` / `demo123`
-  - **Carlos Ferreira**: `carlos.ferreira` / `demo123`
+**👨‍👩‍👧‍👦 Pais:** https://moralesmozart.github.io/luanda-school-pickup/parent
+- Demo: Click "Demo: João Santos" ou "Demo: Carlos Ferreira"
 
-### **3. Painel de Monitorização**
-- URL: `/viewdashboard`
+**📊 Monitor:** https://moralesmozart.github.io/luanda-school-pickup/viewdashboard
 - Vista em tempo real da fila
-- Gestão de entregas
+
+### **🎮 Demonstração Rápida**
+1. Vá para `/parent`
+2. Click "Demo: João Santos"
+3. Explore as 4 secções do dashboard
+4. Teste "Estou Aqui!" e "Ver Fila"
 
 ## 🏗️ Estrutura do Projeto
 

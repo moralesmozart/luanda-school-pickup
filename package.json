@@ -2,7 +2,7 @@
   "name": "luanda-school-pickup",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://[SEU-USERNAME].github.io/luanda-school-pickup",
+  "homepage": "https://moralesmozart.github.io/luanda-school-pickup",
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@testing-library/dom": "^10.4.1",
