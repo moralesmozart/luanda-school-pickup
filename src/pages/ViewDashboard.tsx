@@ -30,6 +30,14 @@ const ViewDashboardContainer = styled.div`
   background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 const Header = styled.header`
@@ -42,12 +50,29 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
 `;
 
 const Logo = styled.div`
@@ -57,11 +82,28 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+    gap: 8px;
+  }
 `;
 
 const HeaderInfo = styled.div`
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const BackButton = styled.button`
@@ -83,6 +125,17 @@ const BackButton = styled.button`
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
 `;
 
 const MainContent = styled.main`
@@ -95,6 +148,14 @@ const MainContent = styled.main`
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
   }
 `;
 

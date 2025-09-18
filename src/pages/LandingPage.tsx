@@ -1,6 +1,247 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// Hero Section Components
+const HeroSection = styled.div`
+  min-height: 100vh;
+  display: flex;
+  background-color: white;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    min-height: auto;
+  }
+`;
+
+const HeroLeft = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
+`;
+
+const HeroRight = styled.div`
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 40px 20px;
+  }
+`;
+
+const LocationBadge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: #6B7280;
+  font-size: 14px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+`;
+
+const HeroTitle = styled.h1`
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #111827;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+`;
+
+const HeroTitleBlue = styled.span`
+  color: #2563EB;
+`;
+
+const HeroSubtitle = styled.p`
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #6B7280;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+`;
+
+const HeroButtons = styled.div`
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+`;
+
+const PrimaryButton = styled.button`
+  background-color: #2563EB;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 24px;
+    font-size: 15px;
+    justify-content: center;
+  }
+`;
+
+const SecondaryButton = styled.button`
+  background-color: white;
+  color: #374151;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: 2px solid #D1D5DB;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #2563EB;
+    color: #2563EB;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 24px;
+    font-size: 15px;
+    justify-content: center;
+  }
+`;
+
+// Challenges Section Components
+const ChallengesSection = styled.div`
+  padding: 80px 60px;
+  background-color: #F9FAFB;
+
+  @media (max-width: 768px) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
+`;
+
+const ChallengesContainer = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const ChallengesTitle = styled.h2`
+  font-size: 40px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+`;
+
+const ChallengesSubtitle = styled.p`
+  font-size: 20px;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+`;
+
+const ChallengesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+`;
+
 // Styled Components
 const ChallengeCard = styled.div`
   background: white;
@@ -15,6 +256,15 @@ const ChallengeCard = styled.div`
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
+
+  @media (max-width: 768px) {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 12px;
+  }
 `;
 
 const CardIcon = styled.div`
@@ -28,12 +278,81 @@ const CardTitle = styled.h3`
   font-weight: bold;
   color: #111827;
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const CardDescription = styled.p`
   font-size: 16px;
   color: #6B7280;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+`;
+
+// How It Works Section Components
+const HowItWorksSection = styled.div`
+  padding: 80px 60px;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
+`;
+
+const HowItWorksContainer = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const HowItWorksTitle = styled.h2`
+  font-size: 40px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+`;
+
+const HowItWorksSubtitle = styled.p`
+  font-size: 20px;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
 `;
 
 // Como Funciona Components
@@ -44,6 +363,16 @@ const HowItWorksCard = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin: 0 auto;
   max-width: 900px;
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
 `;
 
 const StepsContainer = styled.div`
@@ -51,6 +380,15 @@ const StepsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 const Step = styled.div`
@@ -70,6 +408,18 @@ const StepIcon = styled.div<{ color: string }>`
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
 `;
 
 const StepText = styled.div`
@@ -77,6 +427,14 @@ const StepText = styled.div`
   font-weight: 600;
   color: #111827;
   line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 const Arrow = styled.div`
@@ -84,6 +442,15 @@ const Arrow = styled.div`
   font-size: 24px;
   font-weight: bold;
   margin: 0 16px;
+
+  @media (max-width: 768px) {
+    transform: rotate(90deg);
+    margin: 8px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 // Tab Navigation Components
@@ -96,6 +463,20 @@ const TabContainer = styled.div`
   background: #F3F4F6;
   border-radius: 12px;
   padding: 4px;
+
+  @media (max-width: 768px) {
+    margin: 40px auto 0 auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 30px auto 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
 `;
 
 const TabButton = styled.button<{ active: boolean }>`
@@ -118,6 +499,20 @@ const TabButton = styled.button<{ active: boolean }>`
   &:hover {
     background: ${props => props.active ? 'white' : 'rgba(255, 255, 255, 0.5)'};
   }
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 16px;
+    font-size: 13px;
+    width: 100%;
+    flex: none;
+  }
 `;
 
 const ContentCard = styled.div`
@@ -131,6 +526,19 @@ const ContentCard = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 24px;
+    margin: 24px auto 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
+    gap: 24px;
+    margin: 20px auto 0 auto;
+  }
 `;
 
 const ContentLeft = styled.div`
@@ -548,15 +956,80 @@ const AdminActionArrow = styled.div`
   font-size: 16px;
 `;
 
+// Results Section Components
+const ResultsSection = styled.div`
+  padding: 80px 60px;
+  background-color: #F9FAFB;
+
+  @media (max-width: 768px) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
+`;
+
+const ResultsContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const ResultsTitle = styled.h2`
+  font-size: 40px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+`;
+
+const ResultsSubtitle = styled.p`
+  font-size: 20px;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+`;
+
 // Resultados Comprovados Components
 const ResultsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 60px;
-  max-width: 1000px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
 `;
 
 const ResultCard = styled.div`
@@ -610,9 +1083,20 @@ const TestimonialsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 60px;
-  max-width: 1000px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+    margin-top: 32px;
+  }
 `;
 
 const TestimonialCard = styled.div`
@@ -668,6 +1152,17 @@ const CTAHero = styled.div`
   background: white;
   padding: 80px 60px;
   text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
 `;
 
 const CTAHeroTitle = styled.h1`
@@ -676,6 +1171,14 @@ const CTAHeroTitle = styled.h1`
   color: #1E293B;
   margin-bottom: 8px;
   line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
 const CTAHeroTitleBlue = styled.span`
@@ -688,6 +1191,16 @@ const CTAHeroDescription = styled.p`
   max-width: 600px;
   margin: 0 auto 60px auto;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
 `;
 
 const ImplementationCard = styled.div`
@@ -696,7 +1209,19 @@ const ImplementationCard = styled.div`
   padding: 48px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin: 0 auto 48px auto;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+  }
 `;
 
 const ImplementationTitle = styled.h3`
@@ -712,6 +1237,17 @@ const CTAStepsContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 const CTAStep = styled.div`
@@ -730,6 +1266,18 @@ const CTAStepNumber = styled.div<{ color: string }>`
   color: white;
   font-size: 24px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 `;
 
 const CTAStepTitle = styled.h4`
@@ -737,12 +1285,24 @@ const CTAStepTitle = styled.h4`
   font-weight: bold;
   color: #374151;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
 `;
 
 const CTAStepDescription = styled.p`
   font-size: 14px;
   color: #6B7280;
   line-height: 1.5;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 const InvestmentSection = styled.div`
@@ -770,6 +1330,17 @@ const CTAButtons = styled.div`
   gap: 24px;
   justify-content: center;
   margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
 `;
 
 const PrimaryCTAButton = styled.button`
@@ -790,6 +1361,17 @@ const PrimaryCTAButton = styled.button`
     background: #1D4ED8;
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 24px;
+    font-size: 15px;
+    justify-content: center;
+  }
 `;
 
 const SecondaryCTAButton = styled.button`
@@ -808,14 +1390,34 @@ const SecondaryCTAButton = styled.button`
     border-color: #9CA3AF;
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
 `;
 
 const ContactInfo = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
 
 const ContactItem = styled.div`
@@ -1311,30 +1913,11 @@ const LandingPage: React.FC = () => {
     <div>
       
       {/* HERO SECTION - Horizontal split */}
-      <div style={{ 
-        minHeight: '100vh', 
-        display: 'flex', 
-        backgroundColor: 'white' 
-      }}>
-        
+      <HeroSection>
         {/* Left Side - Text and CTAs */}
-        <div style={{ 
-          width: '50%', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'center', 
-          padding: '80px 60px',
-          backgroundColor: 'white'
-        }}>
+        <HeroLeft>
           {/* Location Badge */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            marginBottom: '32px',
-            color: '#6B7280',
-            fontSize: '14px'
-          }}>
+          <LocationBadge>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="24" 
@@ -1350,47 +1933,24 @@ const LandingPage: React.FC = () => {
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
             <span>Luanda, Angola</span>
-          </div>
+          </LocationBadge>
 
           {/* Main Title */}
-          <h1 style={{ 
-            fontSize: '48px', 
-            fontWeight: 'bold', 
-            lineHeight: '1.1', 
-            marginBottom: '24px',
-            color: '#111827'
-          }}>
+          <HeroTitle>
             Revolucione a{' '}
-            <span style={{ color: '#2563EB' }}>Recolha Escolar</span>{' '}
+            <HeroTitleBlue>Recolha Escolar</HeroTitleBlue>{' '}
             na sua escola
-          </h1>
+          </HeroTitle>
 
           {/* Subtitle */}
-          <p style={{ 
-            fontSize: '20px', 
-            lineHeight: '1.6', 
-            marginBottom: '40px',
-            color: '#6B7280'
-          }}>
+          <HeroSubtitle>
             Elimine as filas, reduza o stress e torne a recolha das crianças mais{' '}
-            <span style={{ fontWeight: '600' }}>segura e eficiente</span>.
-          </p>
+            <strong>segura e eficiente</strong>.
+          </HeroSubtitle>
 
           {/* CTA Buttons */}
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <button style={{
-              backgroundColor: '#2563EB',
-              color: 'white',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              border: 'none',
-              fontSize: '18px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}>
+          <HeroButtons>
+            <PrimaryButton>
               Ver Como Funciona
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -1405,34 +1965,17 @@ const LandingPage: React.FC = () => {
               >
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
-            </button>
+            </PrimaryButton>
             
-            <button style={{
-              backgroundColor: 'white',
-              color: '#374151',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              border: '2px solid #D1D5DB',
-              fontSize: '18px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}>
+            <SecondaryButton>
               <span>▶</span>
               Ver Demonstração
-            </button>
-          </div>
-        </div>
+            </SecondaryButton>
+          </HeroButtons>
+        </HeroLeft>
 
         {/* Right Side - System Flow Image */}
-        <div style={{ 
-          width: '50%', 
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
+        <HeroRight>
           <HeroImageContainer>
             <SystemFlowCard>
               {/* School Card */}
@@ -1500,42 +2043,22 @@ const LandingPage: React.FC = () => {
               </HeroBottomCards>
             </SystemFlowCard>
           </HeroImageContainer>
-        </div>
+        </HeroRight>
 
-      </div>
+      </HeroSection>
 
       {/* OS DESAFIOS ATUAIS SECTION */}
-      <div style={{ 
-        padding: '80px 60px',
-        backgroundColor: '#F9FAFB'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ 
-            fontSize: '40px', 
-            fontWeight: 'bold', 
-            color: '#111827',
-            marginBottom: '16px'
-          }}>
+      <ChallengesSection>
+        <ChallengesContainer>
+          <ChallengesTitle>
             Os Desafios Atuais
-          </h2>
-          <p style={{ 
-            fontSize: '20px', 
-            color: '#6B7280',
-            maxWidth: '600px',
-            margin: '0 auto 60px auto',
-            lineHeight: '1.6'
-          }}>
+          </ChallengesTitle>
+          <ChallengesSubtitle>
             A recolha escolar tradicional gera problemas diários para toda a comunidade educativa.
-          </p>
+          </ChallengesSubtitle>
 
           {/* Cards Grid */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(4, 1fr)', 
-            gap: '24px',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
+          <ChallengesGrid>
             
             {/* Card 1: Tempo Desperdiçado */}
             <ChallengeCard>
@@ -1636,33 +2159,19 @@ const LandingPage: React.FC = () => {
               </CardDescription>
             </ChallengeCard>
 
-          </div>
-        </div>
-      </div>
+          </ChallengesGrid>
+        </ChallengesContainer>
+      </ChallengesSection>
 
       {/* COMO FUNCIONA SECTION */}
-      <div style={{ 
-        padding: '80px 60px',
-        backgroundColor: 'white'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ 
-            fontSize: '40px', 
-            fontWeight: 'bold', 
-            color: '#111827',
-            marginBottom: '16px'
-          }}>
+      <HowItWorksSection>
+        <HowItWorksContainer>
+          <HowItWorksTitle>
             Como Funciona
-          </h2>
-          <p style={{ 
-            fontSize: '20px', 
-            color: '#6B7280',
-            maxWidth: '600px',
-            margin: '0 auto 60px auto',
-            lineHeight: '1.6'
-          }}>
+          </HowItWorksTitle>
+          <HowItWorksSubtitle>
             Sistema integrado com três interfaces que trabalham em perfeita harmonia.
-          </p>
+          </HowItWorksSubtitle>
 
           <HowItWorksCard>
             <StepsContainer>
@@ -1815,32 +2324,18 @@ const LandingPage: React.FC = () => {
           {activeTab === 'mobile' && renderMobileAppContent()}
           {activeTab === 'panel' && renderPanelContent()}
           {activeTab === 'admin' && renderAdminContent()}
-        </div>
-      </div>
+        </HowItWorksContainer>
+      </HowItWorksSection>
 
       {/* RESULTADOS COMPROVADOS SECTION */}
-      <div style={{ 
-        padding: '80px 60px',
-        backgroundColor: '#F9FAFB'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ 
-            fontSize: '40px', 
-            fontWeight: 'bold', 
-            color: '#111827',
-            marginBottom: '16px'
-          }}>
+      <ResultsSection>
+        <ResultsContainer>
+          <ResultsTitle>
             Resultados Comprovados
-          </h2>
-          <p style={{ 
-            fontSize: '20px', 
-            color: '#6B7280',
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6'
-          }}>
+          </ResultsTitle>
+          <ResultsSubtitle>
             Dados reais de escolas que já implementaram o sistema.
-          </p>
+          </ResultsSubtitle>
 
           <ResultsGrid>
             {/* Card 1: Menos tempo de espera */}
@@ -1943,8 +2438,8 @@ const LandingPage: React.FC = () => {
               </ResultDescription>
             </ResultCard>
           </ResultsGrid>
-        </div>
-      </div>
+        </ResultsContainer>
+      </ResultsSection>
 
       {/* O QUE DIZEM AS ESCOLAS SECTION */}
       <div style={{ 

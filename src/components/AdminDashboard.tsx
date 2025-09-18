@@ -72,24 +72,50 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 12px;
+  }
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
 `;
 
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: 700;
   color: #2563EB;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
 `;
 
 const LogoutButton = styled.button`
@@ -109,12 +135,30 @@ const LogoutButton = styled.button`
     color: #DC2626;
     border-color: #DC2626;
   }
+
+  @media (max-width: 768px) {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 `;
 
 const MainContent = styled.main`
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 const StatsGrid = styled.div`
@@ -122,6 +166,18 @@ const StatsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
 `;
 
 const StatCard = styled.div`
@@ -130,6 +186,14 @@ const StatCard = styled.div`
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #E5E7EB;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 `;
 
 const StatHeader = styled.div`
@@ -193,6 +257,17 @@ const SectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 16px;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -200,6 +275,14 @@ const SectionTitle = styled.h2`
   font-weight: 600;
   color: #111827;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const AddButton = styled.button`
@@ -219,16 +302,39 @@ const AddButton = styled.button`
   &:hover {
     background: #1D4ED8;
   }
+
+  @media (max-width: 768px) {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
 `;
 
 const SectionContent = styled.div`
   padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 const StudentForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
 `;
 
 const FormRow = styled.div`
@@ -236,8 +342,13 @@ const FormRow = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+  
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 `;
 

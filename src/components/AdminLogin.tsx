@@ -16,6 +16,14 @@ const LoginContainer = styled.div`
   justify-content: center;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 const LoginCard = styled.div`
@@ -26,6 +34,16 @@ const LoginCard = styled.div`
   width: 100%;
   max-width: 400px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 32px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px;
+    border-radius: 16px;
+  }
 `;
 
 const LoginHeader = styled.div`
@@ -54,17 +72,33 @@ const LoginTitle = styled.h1`
   font-weight: 700;
   color: #111827;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const LoginSubtitle = styled.p`
   color: #6B7280;
   font-size: 0.9rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
 `;
 
 const InputGroup = styled.div`
@@ -89,6 +123,17 @@ const Input = styled.input`
   
   &::placeholder {
     color: #9CA3AF;
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    border-radius: 10px;
   }
 `;
 

@@ -41,6 +41,14 @@ const Container = styled.div`
   background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 const Card = styled.div`
@@ -51,6 +59,16 @@ const Card = styled.div`
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 32px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px;
+    border-radius: 16px;
+  }
 `;
 
 const WideCard = styled.div`
@@ -58,8 +76,18 @@ const WideCard = styled.div`
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 32px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px;
+    border-radius: 16px;
+  }
 `;
 
 const Header = styled.div`
@@ -395,6 +423,17 @@ const Tab = styled.button<{ active: boolean }>`
       color: #374151;
     }
   `}
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
 `;
 
 const TabContent = styled.div`
@@ -403,6 +442,17 @@ const TabContent = styled.div`
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   min-height: 400px;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+    min-height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+    min-height: 250px;
+    border-radius: 16px;
+  }
 `;
 
 const StudentCard = styled.div`
